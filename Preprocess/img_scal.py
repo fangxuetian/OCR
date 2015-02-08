@@ -13,7 +13,9 @@ def img_scalate(ppm,scalate_rows,scalate_cols):
 	if float(len(ppm))/scalate_rows == math.ceil(len(ppm)/scalate_rows):  factor = len(ppm)/scalate_rows
 	else: factor = len(ppm)/scalate_rows+1
 	for x in xrange(scalate_rows/factor):
-		for y in xrange(factor)
+		for y in xrange(factor):
+			pass
+	return new_ppm
 	
 	
 	
