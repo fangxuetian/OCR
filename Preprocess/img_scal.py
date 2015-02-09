@@ -29,5 +29,5 @@ def img_scalate(pgm,scalate_rows,scalate_cols):
 	def img_scalate_up():
 		print "Build it"
 	
-	if scalate_rows < len(pgm): return img_scalate_down()
+	if scalate_rows <= len(pgm): return img_scalate_down()
 	else:                       return img_scalate_up()

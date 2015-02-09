@@ -68,7 +68,7 @@ if __name__ == "__main__":
 			except Exception as e:
 				cfail  |= fail("-> Aspect ratio - ")
 			try:
-				pgm        = img_scalate(pgm,32,32)
+				pgm        = img_scalate(pgm,64,64)
 				cfail  |= success("-> Tamanyo despues del escalado: " + str(len(pgm))+'x'+str(len(pgm[0]))+" + ")
 			except Exception as e:
 				cfail  |= fail("-> Escalado - ")
@@ -89,7 +89,10 @@ if __name__ == "__main__":
 			cfail  |= success("-> Archivo salvado "+" + ")
 		except Exception as e:
 			cfail  |= fail("-> Salvar archivo - ")
+
 	except:
 		cfail  |= fail("-> Abrir archivo - ")
-	footer(cfail)
+	finally:
+		footer(cfail)
+	
 	
