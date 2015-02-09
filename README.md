@@ -16,7 +16,12 @@
 </h3><img src="http://i.gyazo.com/35ec454505ef87c58a512529ea0f88b4.png">
 
 <h1> 2. Properties Extract </h1>
-<blink>Building...</blink>
+K-Dimensional vector for represent each pixel of an image.For train, sample requires correct class, for recognition only representation (k-dimensional vector).
+
+Train sample of a 3: ([1,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,255,255,255,255,255,255,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255],2)
+
+Recognition sample of same 3: [1,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,255,255,255,255,255,255,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+
 
 <h1> 3. Classifier </h1>
-<blink>Building...</blink>
+<blink> Building... </blink>
