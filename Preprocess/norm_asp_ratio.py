@@ -9,11 +9,16 @@
 
 # min_rows y min_cols deben ser los mínimos de entre todas las imagenes del corpus #
 
-def norm_aspect_ratio(ppm,min_rows,min_cols,bgcolor):
-	rows_added = 0
-	while len(ppm) < min_rows:
-		ppm.insert(0,[row for row in [bgcolor for x in xrange(min_cols)]])
+def norm_aspect_ratio(pgm,min_rows,min_cols,bgcolor):
+	rows_added,cols_added = 0,0
+	while len(pgm) < min_rows:
+		if rows_added%2==0: pgm.insert(0,[row for row in [bgcolor for x in xrange(min_cols)]])
+		else: pgm.append([row for row in [bgcolor for x in xrange(min_cols)]])
 		rows_added += 1
-	for x in range(rows_added,len(ppm)):
-		while len(ppm[x]) < min_cols: ppm[x].append(bgcolor)
-	return ppm
+	for x in range(rows_added/2,len(pgm)):
+		cols_added = 0
+		while len(pgm[x])<min_cols:
+			if cols_added%2==0: pgm[x].insert(0,bgcolor)
+			else:               pgm[x].append(bgcolor)
+			cols_added += 1
+	return pgm
