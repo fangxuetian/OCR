@@ -9,5 +9,6 @@
 
 def img_binarization(pgm):
 	for row in xrange(len(pgm)):
+		# Ajustar el color mínimo [127] empíricamente #
 		for col in xrange(len(pgm[0])): pgm[row][col] = 0x00 if pgm[row][col]<=127 else 255
 	return pgm

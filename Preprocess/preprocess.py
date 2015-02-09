@@ -14,6 +14,8 @@ from img_smooth     import img_smooth
 from pgm_utils      import save_pgm,extract_whitest,img_extract_rows
 from min_inc_box    import min_inc_box
 from sys            import argv
+from os             import stat
+
 def fail(msg):
 	print msg+"\n"
 	print "-> Please, contact with [overxfl0w13 AT hotmail DOT com], or report at:\n\n\t\t* https://github.com/overxfl0w/OCR/issues/new\n"
@@ -23,6 +25,10 @@ def success(msg):
 	print msg
 	return 0
 
+def file_information(fname):
+	print "-> File: " + fname
+	print "-> Size: " + str(stat(fname).st_size)+"B"
+	
 def header():
 	"""BROADWAY"""
 	print """
@@ -34,15 +40,17 @@ def header():
 
 def footer(fail):
 	print "-> Preproceso finalizado",
-	if fail>0: print "- - -\n\n"
-	else:      print "+ + +\n\n"
+	if fail>0: print "con fallo - - -\n\n"
+	else:      print "correctamente + + +\n\n"
 	
 ## ENTRY POINT ##
 if __name__ == "__main__":
 	cfail = 0
+	sfname,dfname = "1.pgm","1-2.pgm"
 	header()
 	try:
-		with open("1.pgm","rb") as fd:
+		with open(sfname,"rb") as fd:
+			file_information(sfname)
 			header     = fd.readline()
 			size       = fd.readline().split(" ")
 			cols,rows  = int(size[0]),int(size[1])
@@ -77,7 +85,7 @@ if __name__ == "__main__":
 		except Exception as e:
 			cfail  |= fail("-> Binarizacion - ")
 		try:
-			save_pgm("1-2.pgm",pgm,extract_whitest(pgm))
+			save_pgm(dfname,pgm,extract_whitest(pgm))
 			cfail  |= success("-> Archivo salvado "+" + ")
 		except Exception as e:
 			cfail  |= fail("-> Salvar archivo - ")
