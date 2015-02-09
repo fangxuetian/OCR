@@ -9,7 +9,7 @@ OCR POC
 <h2>OnError<h2>
 <img src="http://i.gyazo.com/f28edc8ec8159c71d7099cea78a5f2a0.png">
 <br>
-<h2><div style="color:#FF0000">Test example</div><h2>
+<h2><b style="color:#FF0000">Test example</b><h2>
 <h3> Source image:  </h3>
 <img src="http://i.gyazo.com/6aa92fac21946e8c9391486a19439b21.png">
 <h3> Preprocessing result (aspect ratio 64x64, scalate 32x32): 
