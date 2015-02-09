@@ -1,5 +1,5 @@
 # OCR
-OCR POC
+<u><b>OCR POC</b></u>
 
 <h1> Preprocessing module </h1>
 
@@ -14,3 +14,9 @@ OCR POC
 <img src="http://i.gyazo.com/6aa92fac21946e8c9391486a19439b21.png">
 <h3> Preprocessing result (aspect ratio 64x64, scalate 32x32): 
 </h3><img src="http://i.gyazo.com/35ec454505ef87c58a512529ea0f88b4.png">
+
+<h1> Properties Extract </h1>
+<blink>Building...</blink>
+
+<h1> Classifier </h1>
+<blink>Building...</blink>
